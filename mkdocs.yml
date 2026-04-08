@@ -1,0 +1,13 @@
+site_name: Flower CI/CD Pipeline
+site_description: Documentation du projet de pipeline CI/CD
+site_author: Ahmad Abo-Alola
+
+theme:
+  name: material
+
+nav:
+  - Accueil: index.md
+  - Architecture: architecture.md
+  - API: api.md
+  - Docker: docker.md
+  - Déploiement: deployment.md
