@@ -43,5 +43,15 @@ jobs:
       - name: Push backend image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/flower-backend:latest
 
+      - name: Trigger Azure backend update
+        run: |
+          curl -u '${{ secrets.AZURE_WEBHOOK_USER }}:${{ secrets.AZURE_WEBHOOK_PASS }}' \
+          -X POST 'https://flower-backend-ahmad-eeg8aqg8fkhndvfe.scm.francecentral-01.azurewebsites.net/api/registry/webhook'
+
       - name: Push frontend image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/flower-frontend:latest
+
+      - name: Trigger Azure frontend update
+        run: |
+          curl -u '${{ secrets.AZURE_WEBHOOK_USER_FRONT }}:${{ secrets.AZURE_WEBHOOK_PASS_FRONT }}' \
+          -X POST 'https://YOUR-FRONTEND-SCM-URL/api/registry/webhook'
