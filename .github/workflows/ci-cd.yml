@@ -54,4 +54,4 @@ jobs:
       - name: Trigger Azure frontend update
         run: |
           curl -u '${{ secrets.AZURE_WEBHOOK_USER_FRONT }}:${{ secrets.AZURE_WEBHOOK_PASS_FRONT }}' \
-          -X POST 'https://YOUR-FRONTEND-SCM-URL/api/registry/webhook'
+          -X POST 'https://flower-frontend-ahmad-f7cpesgsbwajhbg0.scm.francecentral-01.azurewebsites.net/api/registry/webhook'
