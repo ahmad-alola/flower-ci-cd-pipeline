@@ -75,7 +75,6 @@ if "sepal_length" not in st.session_state:
 
 st.title("Iris Predictor")
 st.write("Enter the measurements to predict the flower species.")
-st.write("Test the Webhook")
 
 st.markdown("### Example values")
 st.table(
